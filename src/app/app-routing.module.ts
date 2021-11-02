@@ -13,7 +13,8 @@ const routes: Routes = [
   {path: 'dashboard', loadChildren: () => import('./components/dashboard/dashboard.module').then(x => x.DashboardModule)},
   {path: 'agregar-empleado', component:AgregarEmpleadoComponent},
   {path: 'editar-empleado/:id', component:EditarEmpleadoComponent},
-  {path: 'listar-empleado', component:ListarEmpleadoComponent}
+  {path: 'listar-empleado', component:ListarEmpleadoComponent},
+  {path: '**',pathMatch: 'full', redirectTo: 'login'}
 ];
 
 @NgModule({

@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   loading = false;
 
-  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar) {
+  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar, private router: Router ) {
     this.form = this.fb.group({
       usuario: ['', Validators.required],
       password: ['', Validators.required],
@@ -40,14 +40,14 @@ export class LoginComponent implements OnInit {
     this._snackBar.open('Usuario o contraseña ingresados son invalidos', '', {
       duration: 5000,
       horizontalPosition: 'center',
-      verticalPosition: 'bottom',
-    });
+      verticalPosition: 'bottom'
+    })
   }
   fakeLoading() {
     this.loading = true;
     setTimeout(() => {
-      //Redireccion al dashboard
-      this.loading = false;
+
+      this.router.navigate(['dashboard']);
     }, 1500);
   }
 }
