@@ -1,0 +1,9 @@
+.botones {
+  display: flex;
+  margin-top: 20px;
+  place-content: center;
+}
+
+.botones button {
+margin: auto;
+}
