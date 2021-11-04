@@ -9,9 +9,6 @@ import { SharedModule } from './components/shared/shared.module';
 
 
 //Componentes
-import { AgregarEmpleadoComponent } from './components/agregar-empleado/agregar-empleado.component';
-import { EditarEmpleadoComponent } from './components/editar-empleado/editar-empleado.component';
-import { ListarEmpleadoComponent } from './components/listar-empleado/listar-empleado.component';
 import { LoginComponent } from './components/login/login.component';
 
 
@@ -19,9 +16,6 @@ import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AgregarEmpleadoComponent,
-    EditarEmpleadoComponent,
-    ListarEmpleadoComponent,
     LoginComponent
   ],
   imports: [
