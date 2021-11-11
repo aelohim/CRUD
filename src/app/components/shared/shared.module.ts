@@ -14,6 +14,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 
 
 
@@ -31,7 +33,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     HttpClientModule,
     MatTableModule,
     MatDialogModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports:[
     ReactiveFormsModule,
@@ -45,7 +49,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     HttpClientModule,
     MatTableModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class SharedModule { }
