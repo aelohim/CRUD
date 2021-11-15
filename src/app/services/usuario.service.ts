@@ -11,7 +11,7 @@ export class UsuarioService {
     {usuario:'Aelo', nombre: 'Aelohim', apellido: 'Ponce', sexo: 'Masculino'},
     {usuario:'Matias', nombre: 'Herrera', apellido: 'Ponce', sexo: 'Masculino'},
     {usuario:'Anael', nombre: 'Aelohim', apellido: 'Ponce', sexo: 'Masculino'}
-  ]
+  ];
 
   constructor() { }
 
@@ -19,4 +19,7 @@ export class UsuarioService {
     return this.ListUsuario.slice();
   }
 
+  eliminarUsuario(index: number) {
+    this.ListUsuario.splice(index,1);
+  }
 }
