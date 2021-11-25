@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ReportesComponent } from './reportes/reportes.component';
+import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ReportesComponent } from './reportes/reportes.component';
     NavbarComponent,
     InicioComponent,
     UsuariosComponent,
-    ReportesComponent
+    ReportesComponent,
+    CrearUsuarioComponent
   ],
   imports: [
     CommonModule,

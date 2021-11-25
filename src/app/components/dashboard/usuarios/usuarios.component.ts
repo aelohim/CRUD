@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Usuario } from 'src/app/interfaces/usuario';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import { DataSource } from '@angular/cdk/collections';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-usuarios',
@@ -13,7 +13,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class UsuariosComponent implements OnInit {
 
-  listUsuarios: Usuario [] = [];
+  listUsuarios: Usuario[] = [];
 
 
   displayedColumns: string[] = ['usuario', 'nombre', 'apellido', 'sexo', 'acciones'];
@@ -22,7 +22,7 @@ export class UsuariosComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _usuarioService: UsuarioService) { }
+  constructor(private _usuarioService: UsuarioService, private _snackBar: MatSnackBar) { }
 
 
   ngOnInit(): void {
@@ -48,5 +48,9 @@ export class UsuariosComponent implements OnInit {
     console.log(index);
     this._usuarioService.eliminarUsuario(index);
     this.cargarUsuario();
-  }
+    this._snackBar.open('El usuario se ha eliminado con exito', '', {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'})
+    }
 }
