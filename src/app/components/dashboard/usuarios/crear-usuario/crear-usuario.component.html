@@ -3,64 +3,53 @@
     <span>Crear Usuario</span>
   </mat-toolbar>
   <mat-card style="margin-top: 10px">
-    <form>
+    <form [formGroup]="form"  (ngSubmit)="agregarUsuario()">
       <mat-grid-list cols="4" rowHeight="70px">
         <mat-grid-tile [colspan]="1" [rowspan]="1">
           <mat-form-field class="ancho">
             <mat-label>USUARIO</mat-label>
-            <input matInput />
+            <input matInput autocomplete="off" formControlName="usuario"/>
           </mat-form-field>
         </mat-grid-tile>
 
-        <mat-grid-tile
-          [colspan]="3"
-          [rowspan]="5"
-          [style.background]="'lightblue'"
-        >
-          IMG
+        <mat-grid-tile [colspan]="3" [rowspan]="5">
+          <img
+            src="../../../../../assets/img/usuario.png"
+            width="250"
+            height="250"
+          />
         </mat-grid-tile>
-        <mat-grid-tile
-          [colspan]="1"
-          [rowspan]="1">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
           <mat-form-field class="ancho">
             <mat-label>NOMBRE</mat-label>
-            <input matInput />
+            <input matInput formControlName="nombre"/>
           </mat-form-field>
-
         </mat-grid-tile>
         <mat-grid-tile [colspan]="1" [rowspan]="1">
           <mat-form-field class="ancho">
             <mat-label>APELLIDO</mat-label>
-            <input matInput />
+            <input matInput formControlName="apellido"/>
           </mat-form-field>
         </mat-grid-tile>
-        <mat-grid-tile
-          [colspan]="1"
-          [rowspan]="1"
-
-        >
-          SEXO
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label> SEXO </mat-label>
+            <mat-select formControlName="sexo">
+              <mat-option
+                *ngFor="let topping of toppingList"
+                [value]="topping"
+                >{{ topping }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
         </mat-grid-tile>
-        <mat-grid-tile
-          [colspan]="1"
-          [rowspan]="1"
-
-        >
-          BOTONES
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <button mat-raised-button color="primary" style="margin-right: 50px;">ACEPTAR</button>
+          <button type="submit" [disabled]="form.invalid" mat-raised-button color="warn">VOLVER</button>
         </mat-grid-tile>
       </mat-grid-list>
       <br />
       <br />
-      <mat-grid-list cols="4" rowHeight="100px">
-        <mat-grid-tile
-          *ngFor="let tile of tiles"
-          [colspan]="tile.cols"
-          [rowspan]="tile.rows"
-          [style.background]="tile.color"
-        >
-          {{ tile.text }}
-        </mat-grid-tile>
-      </mat-grid-list>
     </form>
   </mat-card>
 </div>

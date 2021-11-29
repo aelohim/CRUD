@@ -7,10 +7,10 @@ import { Usuario } from '../interfaces/usuario';
 export class UsuarioService {
 
   ListUsuario: Usuario[] = [
-    {usuario:'Aelo', nombre: 'Aelohim', apellido: 'Ponce', sexo: 'Masculino'},
-    {usuario:'Aelo', nombre: 'Aelohim', apellido: 'Ponce', sexo: 'Masculino'},
-    {usuario:'Matias', nombre: 'Herrera', apellido: 'Ponce', sexo: 'Masculino'},
-    {usuario:'Anael', nombre: 'Aelohim', apellido: 'Ponce', sexo: 'Masculino'}
+    {usuario:'Apon', nombre: 'Aelohim', apellido: 'Ponce', sexo: 'Masculino'},
+    {usuario:'Anapon', nombre: 'Anael', apellido: 'Ponce', sexo: 'Masculino'},
+    {usuario:'Mat32', nombre: 'Matias', apellido: 'Herrera', sexo: 'Masculino'},
+    {usuario:'Sab21', nombre: 'Sabatiel', apellido: 'Ponce', sexo: 'Masculino'}
   ];
 
   constructor() { }
@@ -21,5 +21,9 @@ export class UsuarioService {
 
   eliminarUsuario(index: number) {
     this.ListUsuario.splice(index,1);
+  }
+
+  agregarUsuarios(usuario: Usuario){
+    this.ListUsuario.unshift(usuario);
   }
 }
